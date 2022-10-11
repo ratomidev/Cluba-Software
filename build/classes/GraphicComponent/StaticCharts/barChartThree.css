@@ -1,0 +1,15 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 11 oct. 2022, 15:40:20
+    Author     : MRtou
+*/
+
+.default-color0.chart-bar {
+    -fx-bar-fill: #FF2273;
+}
+.default-color1.chart-bar {
+    -fx-bar-fill: #59C8CC;
+}

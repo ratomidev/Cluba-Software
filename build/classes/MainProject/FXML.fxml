@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="StageAnchorPane" fx:id="StageAnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="6.0" prefWidth="1535.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainProject.FXMLController">
+    <stylesheets>
+        <URL value="@fxml.css" />
+    </stylesheets>
+   <children>
+      <VBox id="MainVBox" fx:id="MainVBox" layoutY="-4.0" prefHeight="777.0" prefWidth="156.0" style="-fx-background-color: #0F1020;">
+         <children>
+            <ImageView fx:id="logo" fitHeight="86.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" />
+            <Separator prefHeight="6.0" prefWidth="150.0" />
+            <Button id="btnMembers" fx:id="btnMembers" mnemonicParsing="false" onAction="#eventBtnMembre" onMouseEntered="#mouseEntredBtn" onMouseExited="#mouseExitedBtn" prefHeight="100.0" prefWidth="156.0" style="-fx-background-color: #0F1020;" text="Les membres" textFill="#fff6f6" />
+            <Separator prefHeight="52.0" prefWidth="156.0" />
+            <Button id="btnStatistics" fx:id="btnStatistics" mnemonicParsing="false" onAction="#eventBtnStatistiques" onMouseEntered="#mouseEntredBtn" onMouseExited="#mouseExitedBtn" prefHeight="100.0" prefWidth="156.0" style="-fx-background-color: #0F1020;" text="Les statistiques" textFill="#fff6f6" />
+            <Separator prefHeight="50.0" prefWidth="200.0" />
+            <Button fx:id="btn" mnemonicParsing="false" onMouseEntered="#mouseEntredBtn" onMouseExited="#mouseExitedBtn" prefHeight="100.0" prefWidth="156.0" style="-fx-background-color: #0F1020;" text="Les evenements " textFill="#fff6f6" />
+            <Separator prefHeight="50.0" prefWidth="156.0" />
+            <Button id="btnBudget" fx:id="btnBudget" mnemonicParsing="false" onAction="#eventBtnBudget" onMouseEntered="#mouseEntredBtn" onMouseExited="#mouseExitedBtn" prefHeight="96.0" prefWidth="156.0" style="-fx-background-color: #0F1020;" text="Le budget" textFill="#fff6f6" />
+            <Separator prefHeight="40.0" prefWidth="156.0" />
+            <Button mnemonicParsing="false" onMouseEntered="#mouseEntredBtn" onMouseExited="#mouseExitedBtn" prefHeight="75.0" prefWidth="156.0" style="-fx-background-color: #0F1020;" text="Les demandes" textFill="#fff6f6" />
+         </children>
+      </VBox>
+      <AnchorPane id="membersAnchorPane" fx:id="membersAnchorPane" layoutX="196.0" layoutY="58.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="670.0" prefWidth="1314.0" style="-fx-background-color: #e4e4e4;" visible="false">
+         <children>
+            <HBox fx:id="hbAdd" alignment="CENTER_LEFT" layoutX="14.0" layoutY="60.0" prefHeight="75.0" prefWidth="1272.0">
+               <children>
+                  <TextField fx:id="textFieldName" prefHeight="42.0" prefWidth="109.0" promptText="Nom" />
+                  <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="30.0" />
+                  <TextField fx:id="textFieldLastName" prefHeight="42.0" prefWidth="107.0" promptText="Prenom" />
+                  <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="30.0" />
+                  <TextField fx:id="textFieldEmail" prefHeight="42.0" prefWidth="107.0" promptText="E-mail" />
+                  <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="30.0" />
+                  <TextField fx:id="textFieldTel" prefHeight="42.0" prefWidth="107.0" promptText="Tel" />
+                  <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="30.0" />
+                  <TextField fx:id="textFieldCountry" prefHeight="42.0" prefWidth="107.0" promptText="Ville" />
+                  <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="52.0" />
+                  <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Niveau scolaire" />
+                  <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="52.0" />
+                  <TextField fx:id="textFieldDate" prefHeight="42.0" prefWidth="107.0" promptText="jj-mm-aa" />
+                  <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="52.0" />
+                  <CheckBox fx:id="checkBoxMale" mnemonicParsing="false" onAction="#eventCheckBoxMale" prefHeight="18.0" prefWidth="72.0" text="Male">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="checkBoxFemale" mnemonicParsing="false" onAction="#eventCheckBoxFemale" prefHeight="18.0" prefWidth="78.0" text="Female">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </CheckBox>
+                  <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="52.0" />
+                  <Button fx:id="btnAddPhoto" mnemonicParsing="false" onAction="#eventBtnAddPhoto" prefHeight="26.0" prefWidth="130.0" text="Choisir une photo" />
+                  <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="52.0" />
+                  <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addToList" onMouseEntered="#btnAddOnMouseEntred" onMouseExited="#btnAddOnMouseExited" prefHeight="42.0" prefWidth="97.0" style="-fx-background-color: #4c53bf;" text="Ajouter" textFill="WHITE" />
+               </children>
+            </HBox>
+            <Label layoutX="14.0" layoutY="190.0" prefHeight="35.0" prefWidth="468.0" text="1200 members " textFill="#696262">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ScrollPane fx:id="scrollPane" layoutX="8.0" layoutY="273.0" prefHeight="315.0" prefWidth="1286.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorStatics" layoutX="190.0" layoutY="55.0" prefHeight="677.0" prefWidth="1324.0" style="-fx-background-color: #e4e4e4;" visible="false">
+         <children>
+            <Separator layoutX="679.0" layoutY="35.0" orientation="VERTICAL" prefHeight="581.0" prefWidth="0.0" />
+            <Separator layoutX="187.0" layoutY="340.0" prefHeight="19.0" prefWidth="941.0" />
+            <PieChart fx:id="pieChart" layoutX="86.0" layoutY="52.0" prefHeight="260.0" prefWidth="407.0" />
+            <Label layoutX="100.0" layoutY="17.0" prefHeight="35.0" prefWidth="462.0" text="Repartition d'effectif sur les regions">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <PieChart fx:id="pieChart2" layoutX="761.0" layoutY="52.0" prefHeight="260.0" prefWidth="407.0" stylesheets="@../GraphicComponent/StaticCharts/PieTwo.css" />
+            <BarChart fx:id="barChartOne" layoutX="106.0" layoutY="403.0" prefHeight="260.0" prefWidth="407.0" stylesheets="@../GraphicComponent/StaticCharts/barChartOne.css">
+              <xAxis>
+                <CategoryAxis fx:id="XAxis" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <BarChart fx:id="barChartTwo" layoutX="747.0" layoutY="403.0" prefHeight="260.0" prefWidth="407.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <Label layoutX="733.0" layoutY="17.0" prefHeight="35.0" prefWidth="462.0" text="Proportion des hommes et des femmes">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="100.0" layoutY="368.0" prefHeight="35.0" prefWidth="462.0" text="Repartition d'effectif par groupe d'age">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="747.0" layoutY="359.0" prefHeight="35.0" prefWidth="462.0" text="Repartion d'effectif par niveau scolaire">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchoBudget" layoutX="178.0" layoutY="6.0" prefHeight="761.0" prefWidth="1335.0" style="-fx-background-color: #e4e4e4;">
+         <children>
+            <DatePicker layoutX="36.0" layoutY="14.0" prefHeight="35.0" prefWidth="206.0" promptText="Choisir une Date" />
+            <Label alignment="TOP_LEFT" layoutX="75.0" layoutY="70.0" prefHeight="110.0" prefWidth="206.0" style="-fx-background-color: #FF2273; -fx-background-radius: 20; -fx-label-padding: 10;" text="Budget total" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="304.0" layoutY="70.0" prefHeight="110.0" prefWidth="206.0" style="-fx-background-color: #FF9477; -fx-background-radius: 20; -fx-label-padding: 10;" text="Revenus      (Abonnements annuels)" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="793.0" layoutY="70.0" prefHeight="110.0" prefWidth="206.0" style="-fx-background-color: #D067BA; -fx-background-radius: 20; -fx-label-padding: 10;" text="Revenus                    (dons) " textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="547.0" layoutY="70.0" prefHeight="110.0" prefWidth="206.0" style="-fx-background-color: #59C8CC; -fx-background-radius: 20; -fx-label-padding: 10;" text="Revenus            (sponsoring)" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="1062.0" layoutY="70.0" prefHeight="110.0" prefWidth="206.0" style="-fx-background-color: #FF2273; -fx-background-radius: 20; -fx-label-padding: 10;" text="Depence" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="label4" alignment="CENTER" layoutX="1058.0" layoutY="135.0" prefHeight="42.0" prefWidth="206.0" text="420 dt" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="label3" alignment="CENTER" layoutX="791.0" layoutY="135.0" prefHeight="42.0" prefWidth="206.0" text="750 dt" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2" alignment="CENTER" layoutX="547.0" layoutY="135.0" prefHeight="42.0" prefWidth="206.0" text="650 dt" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="label1" alignment="CENTER" layoutX="306.0" layoutY="135.0" prefHeight="42.0" prefWidth="206.0" text="1400 dt" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="label0" alignment="CENTER" contentDisplay="CENTER" layoutX="97.0" layoutY="135.0" prefHeight="42.0" prefWidth="165.0" text="300dt" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="36.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableV" layoutX="66.0" layoutY="214.0" prefHeight="224.0" prefWidth="1204.0" style="-fx-background-radius: 50;">
+              <columns>
+                <TableColumn fx:id="columnDate" minWidth="9.599990844726562" prefWidth="167.99998474121094" text="Date" />
+                <TableColumn fx:id="columnSujet" prefWidth="150.4000244140625" text="Sujet" />
+                  <TableColumn fx:id="columnEvenement" prefWidth="170.39996337890625" text="Evenement" />
+                  <TableColumn fx:id="columnDepense" prefWidth="244.0" text="Depense" />
+                  <TableColumn fx:id="columnRevenu" prefWidth="207.199951171875" text="Revenu" />
+                  <TableColumn fx:id="ColumnSourceRevenu" minWidth="0.0" prefWidth="251.2000732421875" text="Source de revenu" />
+              </columns>
+            </TableView>
+            <Separator layoutX="567.0" layoutY="451.0" orientation="VERTICAL" prefHeight="260.0" prefWidth="6.0" />
+            <DatePicker layoutX="97.0" layoutY="469.0" prefHeight="30.0" prefWidth="355.0" promptText="Date" />
+            <TextArea fx:id="textArea" layoutX="97.0" layoutY="504.0" prefHeight="50.0" prefWidth="355.0" promptText="Sujet ..." />
+            <TextField fx:id="tfEvenement" layoutX="97.0" layoutY="560.0" prefHeight="30.0" prefWidth="355.0" promptText="Evenement" />
+            <TextField fx:id="tfDepense" layoutX="96.0" layoutY="596.0" prefHeight="30.0" prefWidth="355.0" promptText="Depense" />
+            <TextField fx:id="tfRevenu" layoutX="97.0" layoutY="632.0" prefHeight="30.0" prefWidth="355.0" promptText="Revenu" />
+            <TextField fx:id="tfSourceRevenu" layoutX="97.0" layoutY="668.0" prefHeight="30.0" prefWidth="355.0" promptText="Source de revenu" />
+            <Button fx:id="addBtnBudget" layoutX="97.0" layoutY="711.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="355.0" text="Ajouter" />
+            <BarChart fx:id="barChartThree" layoutX="609.0" layoutY="451.0" prefHeight="282.0" prefWidth="658.0" stylesheets="@../GraphicComponent/StaticCharts/barChartThree.css">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
